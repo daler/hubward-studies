@@ -1,0 +1,15 @@
+name: "hubward-example"
+genome: "hg19"
+short_label: "Hubward example"
+long_label: "Hubward example tracks"
+hub_url: "http://example.com/hubs/example.hub.txt"
+email: "dalerr@niddk.nih.gov"
+
+server:
+    hub_remote: "/www/hubs/example.hub.txt"
+    host: "example.com"
+    user: "username"
+
+studies:
+    - "yip-2012"
+    - "lieberman-2009-hg19"

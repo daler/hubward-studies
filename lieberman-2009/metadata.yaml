@@ -1,0 +1,34 @@
+study:
+  label: 'lieberman-2009'
+  reference: "Lieberman-Aiden et al. Science. 2009 326(5950):289-93"
+  PMID: "19815776"
+  short_label: "HiC K562"
+  description: "Hi-C data in K562 cells. *Note: only selected regions included*"
+
+data:
+  -
+   description: "K562 HiC contacts within beta globin locus"
+   short_label: "HiC chr11_5200000-5299999"
+   genome: "hg18"
+   original: "raw-data/HIC_k562_chr11_chr11_100000_obsexp.txt"
+   processed: 'processed-data/chr11_5200000_5299999.bigwig'
+   source: &source
+     fn: "GSE18199_binned_heatmaps.zip.gz"
+     url: "http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE18199&format=file&file=GSE18199%5Fbinned%5Fheatmaps%2Ezip%2Egz"
+   script: "src/process.py"
+   trackinfo:
+     color: "75,105,131"
+     viewLimits: "0:10"
+   type: "bigwig"
+
+  -
+    short_label: "Anchor bin"
+    genome: "hg18"
+    original: "raw-data/HIC_k562_chr11_chr11_100000_obsexp.txt"
+    processed: "processed-data/chr11_5200000_5299999.bigbed"
+    source: *source
+    script: "src/make_anchor.py"
+    trackinfo:
+        tracktype: "bigBed 3"
+        color: "180,0,0"
+    type: "bigbed"

@@ -1,0 +1,36 @@
+study:
+  label: "yip-2012"
+  short_label: "Candidate enhancers"
+  long_label: "Candidate enhancers from K562 cells"
+  reference: "Yip et al. 2012. Genome Biol. 13(9):R48"
+  PMID: "22950945"
+  description: "Distal regulatory modules (DRMS) intersecting ..."
+
+data:
+  -
+    short_label: "K562 DRM+E"
+    genome: "hg19"
+    original: "raw-data/DRM_E_K562_merged.bed.gz"
+    processed: "processed-data/drm_k562_enhancers.bigbed"
+    script: "bed2bigbed.sh"
+    source:
+      url: "http://encodenets.gersteinlab.org/metatracks/DRM_E_K562_merged.bed.gz"
+      fn: "DRM_E_K562_merged.bed.gz"
+    trackinfo: &info
+      tracktype: "bigBed 4"
+      color: "255,102,0"
+    type: "bigbed"
+
+  -
+    short_label: "K562 DRM+WE"
+    genome: "hg19"
+    original: "raw-data/DRM_WE_K562_merged.bed.gz"
+    processed: "processed-data/drm_k562_weak-enhancers.bigbed"
+    script: "bed2bigbed.sh"
+    source:
+      url: "http://encodenets.gersteinlab.org/metatracks/DRM_WE_K562_merged.bed.gz"
+      fn: "DRM_WE_K562_merged.bed.gz"
+    trackinfo:
+        tracktype: "bigBed 4"
+        color: "204,153,102"
+    type: "bigbed"
