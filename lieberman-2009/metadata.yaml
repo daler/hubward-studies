@@ -10,7 +10,7 @@ tracks:
    description: "K562 HiC contacts within beta globin locus"
    short_label: "HiC chr11_5200000-5299999"
    genome: "hg18"
-   original: "raw-data/HIC_k562_chr11_chr11_100000_obsexp.txt"
+   original: "raw-data/HIC_k562_chr11_chr11_100000_obsexp.txt.gz"
    processed: 'processed-data/chr11_5200000_5299999.bigwig'
    source: &source
      fn: "GSE18199_binned_heatmaps.zip.gz"
@@ -24,7 +24,7 @@ tracks:
   -
     short_label: "Anchor bin"
     genome: "hg18"
-    original: "raw-data/HIC_k562_chr11_chr11_100000_obsexp.txt"
+    original: "raw-data/HIC_k562_chr11_chr11_100000_obsexp.txt.gz"
     processed: "processed-data/chr11_5200000_5299999.bigbed"
     source: *source
     script: "src/make_anchor.py"
