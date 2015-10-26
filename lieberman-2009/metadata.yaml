@@ -5,7 +5,7 @@ study:
   short_label: "HiC K562"
   description: "Hi-C data in K562 cells. *Note: only selected regions included*"
 
-data:
+tracks:
   -
    description: "K562 HiC contacts within beta globin locus"
    short_label: "HiC chr11_5200000-5299999"

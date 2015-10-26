@@ -6,7 +6,7 @@ study:
   PMID: "22950945"
   description: "Distal regulatory modules (DRMS) intersecting ..."
 
-data:
+tracks:
   -
     short_label: "K562 DRM+E"
     genome: "hg19"
