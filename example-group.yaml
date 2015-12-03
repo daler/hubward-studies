@@ -1,15 +1,53 @@
-name: "hubward-example"
-genome: "hg19"
-short_label: "Hubward example"
-long_label: "Hubward example tracks"
-hub_url: "http://example.com/hubs/example.hub.txt"
-email: "dalerr@niddk.nih.gov"
 
+# Group together [possibly many] studies.
+
+
+# Group name. Will appear as a new section (blue bars) in the genome
+# browser.
+name: hubward-example-hub
+
+# Genome assembly
+genome: hg19
+
+# Short label for this group. This text will be found in the blue
+# section headers in the UCSC Genome Browser.
+short_label: Hubward example hub
+
+# Long label for hub. This will be seen in the Description column when
+# adding a track hub.
+long_label: Example hub for demonstrating hubward
+
+# Upon being uploaded to the server, this is the URL by which the hub
+# can be accessed. It is the URL to be pasted into the text box when
+# adding a new track hub in the UCSC Genome Browser.
+hub_url: hub_dir/example.hub.txt
+
+# UCSC requests that email is included on track hubs so they can track
+# usage.
+email: none@example.com
+
+# Configuration for uploading tracks and track hub to a server over
+# rsync, called as `rsync <locally-prepared track hub>
+# <user>@<host>:<hub_remote>`. If deleted, empty, or set to empty
+# strings, then you'll need to provide these details on the command line
+# when calling `hubward upload`. Those command line arguments also
+# override the corresponding option configured here.
 server:
-    hub_remote: "/www/hubs/example.hub.txt"
-    host: "example.com"
-    user: "username"
 
+  # Host name where tracks will be rsynced. Override at command line with
+  # `--host <HOST>`.
+  host: localhost
+
+  # User on `host`. Override on command line with `--user <USERNAME>`. Can
+  # use "$USER" to expand to the current username.
+  user: $USER
+
+  # Path on `host` to rsync the track hub `hub.txt` file. This file is
+  # expected to be served and accessible via the `hub_url` configured
+  # above. Override at command line with `--hub_remote <FILENAME>`.
+  hub_remote: hub_dir/example.txt
+
+# List of studies to include, as composite tracks, in this hub.
 studies:
-    - "yip-2012"
-    - "lieberman-2009-hg19"
+  - test/yip-2012
+  - lieberman-2009-hg19
