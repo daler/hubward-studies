@@ -20,7 +20,7 @@ def to_bed(f):
 row['chr'], row['start'], row['end'] = zip(*(row.index.to_series().apply(to_bed)))
 tmp = target + '.tmp'
 hubward.utils.makedirs(os.path.dirname(tmp))
-row[['chr', 'start', 'end', 'score']].sort(['chr', 'start'])\
+row[['chr', 'start', 'end', 'score']].sort_values(['chr', 'start'])\
     .to_csv(tmp, sep='\t', index=False, header=False)
 hubward.utils.bigwig(tmp, genome='hg18', output=target)
 os.unlink(tmp)
