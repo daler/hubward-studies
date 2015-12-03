@@ -1,0 +1,4 @@
+# dirname	from_assembly	to_assembly	dest_dir
+sexton-2012	dm3	dm6	sexton-2012-dm6
+vanBemmel-2010	dm2	dm3	vanBemmel-2010-dm3
+vanBemmel-2010-dm3	dm3	dm6	vanBemmel-2010-dm3-dm6
