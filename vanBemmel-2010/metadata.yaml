@@ -1,0 +1,27 @@
+study:
+  label: vanbemmel-2010
+  short_label: LADs [Kc]
+  long_label: LADs from Van Bemmel 2010, Kc cells
+  reference: 'Van Bemmel, J. G. et al. The Insulator Protein SU(HW) Fine-Tunes Nuclear
+    Lamina Interactions of the Drosophila Genome. PLoS One 5, e15013 (2010).'
+  PMID: "21124834"
+
+tracks:
+  -
+    genome: dm2
+    short_label: LAD domains (Kc)
+    long_label: LAD domains (Kc)
+    original: raw-data/tableS1.txt
+    processed: processed-data/tableS1.bigbed
+    script: src/process.py
+    source:
+      url: http://www.plosone.org/article/fetchSingleRepresentation.action?uri=info:doi/10.1371/journal.pone.0015013.s007
+      fn: tableS1.txt
+
+    trackinfo: 
+        tracktype: bigBed 6
+        itemRgb: "on"
+        minGrayLevel: 3
+        visibility: dense
+
+    type: bigbed
