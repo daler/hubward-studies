@@ -13,13 +13,18 @@ upload.
 import yaml
 import os
 import glob
+from textwrap import dedent
+from hubward import models
+from jinja2 import Template
+
 
 def was_lifted_over(y):
-    # first line has comment saying it was lifted over. TODO: hubward should
-    # add some additional metadata for this: from, to, original dir (abspath
-    # or relpath)
-    if 'lifting over' in open(y).readline():
-        return True
+    """
+    If lifted over, returns the `liftover` dictionary; otherwise None.
+    """
+    return yaml.load(
+        open(os.path.join(y, 'metadata.yaml'))
+    )['study'].get('liftover')
 
 
 def find_metadata(start='.'):
@@ -30,48 +35,54 @@ def find_metadata(start='.'):
     for root, dirs, files in os.walk(start):
         for filename in files:
             if filename == 'metadata.yaml':
-                m = os.path.join(root, filename)
-                metadata.append(m)
+                metadata.append(root)
     return metadata
 
-
-def resolve_root(y, path=None):
-    """
-    Returns the list of originals from which `y` was lifted over.
-
-    If `y` itself is the original (i.e. it was not lifted over from anything),
-    the list is empty.
-
-    If `y` was lifted over, the first item of the list is the original.
-    """
-    if path is None:
-        path = []
-    if not was_lifted_over(y):
-        return []
-    first_line = open(y).readline()
-    first_line = first_line.replace('# This config file was created when lifting over ', '')
-    orig = first_line.split(' from')[0]
-    if was_lifted_over(os.path.join(orig, 'metadata.yaml')):
-        path = resolve_root(os.path.join(orig, 'metadata.yaml'), path)
-    if orig not in path:
-        path.append(orig)
-    return path
+start = '.'
 
 
-if __name__ == "__main__":
-    start = '.'
-    metadata = find_metadata(start)
-    to_remove = set()
-    to_document = set()
-    for m in metadata:
-        chain = resolve_root(m)
-        to_remove.update([os.path.join(start, i, 'metadata.yaml') for i in chain])
-        if not chain:
-            to_document.update([m])
-        else:
-            to_document.update([os.path.join(start, chain[0], 'metadata.yaml')])
-    to_upload = set(metadata).difference(to_remove)
-    print('These should be uploaded:')
-    print('\n'.join(sorted(to_upload)))
-    print('\nThese should be documented:')
-    print('\n'.join(sorted(to_document)))
+def normpath(p):
+    return os.path.relpath(p, start)
+
+metadata = find_metadata(start)
+to_remove = []
+to_document = []
+for m in metadata:
+    w = was_lifted_over(m)
+    if w:
+        to_remove.append(normpath(w['previous_study']))
+        to_document.append(normpath(w['original_study']))
+    else:
+        to_document.append(normpath(m))
+
+to_document = set(to_document)
+to_remove = set(to_remove)
+
+to_upload = set(map(normpath, metadata)).difference(to_remove)
+print('These should be uploaded:')
+print('\n'.join(sorted(to_upload)))
+print('\nThese should be documented:')
+print('\n'.join(sorted(to_document)))
+
+genomes = []
+template = Template(open('manifest_template.rst').read())
+with open('manifest.rst', 'w') as fout:
+    studies = []
+    for study in sorted(to_document):
+        study = models.Study(study)
+        study.underline = '=' * (len(study.dirname) + 4)
+        study.genomes = ', '.join(
+            sorted(list(set([i.genome for i in study.tracks]))))
+        genomes.extend([i.genome for i in study.tracks])
+        studies.append(study)
+    fout.write(template.render(studies=studies))
+
+with open('to_process.sh', 'w') as fout:
+    fout.write('#!/bin/bash\n')
+    for study in sorted(to_document):
+        fout.write('hubward process {0}\n'.format(study))
+    fout.write('./do_liftovers.py')
+
+with open('to_upload.txt', 'w') as fout:
+    for study in sorted(to_upload):
+        fout.write(study + '\n')
