@@ -1,2 +1,3 @@
 hubward-all
 xlrd
+jinja2
