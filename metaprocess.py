@@ -83,6 +83,10 @@ with open('to_process.sh', 'w') as fout:
         fout.write('hubward process {0}\n'.format(study))
     fout.write('./do_liftovers.py')
 
+    mode = os.stat(fout.name).st_mode
+    mode |= (mode & 0444) >> 2
+    os.chmod(fout.name, mode)
+
 with open('to_upload.txt', 'w') as fout:
     for study in sorted(to_upload):
         fout.write(study + '\n')
