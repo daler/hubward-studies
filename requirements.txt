@@ -1,13 +1,3 @@
-hubward
-ucsc-bedtobigbed
-ucsc-bedgraphtobigwig
-ucsc-wigtobigwig
-ucsc-bigbedtobed
-ucsc-fetchchromsizes
-ucsc-liftover
-ucsc-bigwigtobedgraph
-ucsc-bigwigtowig
-bedtools
-crossmap
-pandas
+hubward-all
 xlrd
+jinja2

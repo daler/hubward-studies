@@ -66,3 +66,37 @@ you're ready, upload::
     hubward upload example-group.yaml
 
 
+Preparing all configured studies
+--------------------------------
+
+Run the preprocessing script `metaprocess.py`. This will:
+* look for all directories containing a `metadata.yaml` file
+* exclude those that have been lifted over so that only the original studies are documented
+* create a `manifest.rst` file
+* add the directory, study description, and configured tracks to the `manifest.rst` file as documentation
+* add a line to `to_process.sh` for each original study
+* add a final line to `to_process.sh` that will perform the liftovers as needed.
+
+Then edit the ``liftovers.tsv`` file to indicate which studies should be lifted
+over. Note that this file is processed sequentially, so studies that need to be
+incrementally lifted over are handled properly.
+
+Then run the `to_process.sh` script to process and update all studies as needed.
+
+Finally, re-run `metaprocess.py` to get an updated list of which studies to
+upload. If a study was lifted over to another assembly, only the lifted-over
+version will be included.
+
+::
+
+    python metaprocess.py   # inital run
+
+    # then edit `liftovers.tsv`
+
+    bash to_process.sh      # may take a while
+
+    python metaprocess.py   # re-run to get an updated `to_upload.txt`
+
+After this successfully completes, re-run `metaprocess.py`. This will write
+a file, `to_upload.txt`, that can be used to fill in the group YAML config
+file.
