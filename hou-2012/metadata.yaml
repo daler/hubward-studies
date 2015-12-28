@@ -1,0 +1,41 @@
+study:
+  label: hou-2012
+
+  short_label: Physical domains from Hou 2012 [Kc cells]
+  long_label: Physical domains from Hi-C data, Kc cells
+  reference: Chunhui Hou, Li Li, Zhaohui S. Qin, Victor G. Corces, Gene Density, Transcription, and Insulators Contribute to the Partition of the Drosophila Genome into Physical Domains, Molecular Cell, Volume 48, Issue 3, 9 November 2012, Pages 471-484
+  PMID: 23041285
+  description:
+
+tracks:
+  -
+    genome: dm3
+    short_label: Physical domains
+    long_label: Physical domains [Kc cells]
+    original: raw-data/mmc2.xls
+    processed: processed-data/physical-domains.bigbed
+    script: src/process.py
+    source:
+      url: http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S1097276512007757/1-s2.0-S1097276512007757-mmc2.xls/272198/html/S1097276512007757/302facaa52f3510bc73ffe6c3a64c4b3/mmc2.xls
+      fn: mmc2.xls
+    trackinfo: 
+        tracktype: bigBed 3
+        color: 0,0,0
+        visibility: dense
+    type: bigbed
+
+  -
+    genome: dm3
+    short_label: Physical domain boundaries
+    long_label: Physical domain boundaries [Kc cells]
+    original: raw-data/mmc2.xls
+    processed: processed-data/physical-domain-boundaries.bigbed
+    script: src/process.py
+    source:
+      url: http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S1097276512007757/1-s2.0-S1097276512007757-mmc2.xls/272198/html/S1097276512007757/302facaa52f3510bc73ffe6c3a64c4b3/mmc2.xls
+      fn: mmc2.xls
+    trackinfo: 
+        tracktype: bigBed 3
+        color: 0,0,0
+        visibility: dense
+    type: bigbed
