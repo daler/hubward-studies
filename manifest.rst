@@ -24,6 +24,19 @@ Tracks
 * Physical domain boundaries
 
 
+``jain-2015``
+=============
+Phantom peaks from Table S3, parsed from Excel and converted to bigBed format.
+
+
+:genome: dm3
+
+Tracks
+------
+
+* Phantom peaks
+
+
 ``lieberman-2009-hg19``
 =======================
 Hi-C data in K562 cells. *Note: only selected regions included*
