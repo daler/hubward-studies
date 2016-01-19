@@ -1,3 +1,4 @@
 hubward-all
+samtools
 xlrd
 jinja2
