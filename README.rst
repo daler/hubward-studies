@@ -70,6 +70,7 @@ Preparing all configured studies
 --------------------------------
 
 Run the preprocessing script `metaprocess.py`. This will:
+
 * look for all directories containing a `metadata.yaml` file
 * exclude those that have been lifted over so that only the original studies are documented
 * create a `manifest.rst` file

@@ -6,6 +6,40 @@ of each section corresponds to the directory within this repo.
 
 
 
+``hou-2012``
+============
+Physical domain boundaries from Hou et al 2012 in Kc cells. Table S2 contains
+an excel file of physical domains. These are contiguous domains, so it's
+probably more useful to look at them as boundaries. The 1-bp boundaries between
+domains were calculated from Table S2 and a new BED file created.
+
+
+:genome: dm3
+
+Tracks
+------
+
+* Physical domains
+
+* Physical domain boundaries
+
+
+``lieberman-2009-hg19``
+=======================
+Hi-C data in K562 cells. *Note: only selected regions included*
+Data were lifted over from hg18 to hg19
+
+
+:genome: hg19
+
+Tracks
+------
+
+* HiC chr11_5200000-5299999: K562 HiC contacts within beta globin locus
+
+* Anchor bin
+
+
 ``sexton-2012``
 ===============
 "Domain coordinates (from dm3 assembly) of the physical
@@ -83,4 +117,26 @@ Tracks
 ------
 
 * LAD domains (Kc)
+
+
+``wood-2011``
+=============
+Data are available as BED and WIG format files from GEO accession GSE30740. BED
+files were minimally processed, by prepending "chr" to chromosome names,
+converting negative coordinates to zero, and truncating peaks outside of
+chromosome boundaries to the max length of the chromosome.
+
+
+:genome: dm3
+
+Tracks
+------
+
+* CP190 0hrs peaks
+
+* SUHW 0hrs peaks
+
+* BEAF 0hrs peaks
+
+* CTCF 0hrs peaks
 
