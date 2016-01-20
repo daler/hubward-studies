@@ -30,7 +30,13 @@ Clone the github repo:
 git clone https://github.com/daler/hubward-studies.git
 ```
 
-Go to that directory and process the test studies:
+Go to that directory, and install any additional requirements:
+
+```bash
+conda install -c r -c bioconda --file requirements.txt
+```
+
+and process the test studies:
 
 ```bash
 cd hubward-studies
