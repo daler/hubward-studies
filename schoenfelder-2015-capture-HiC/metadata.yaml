@@ -1,0 +1,77 @@
+study:
+  label: schoenfelder-2015
+  long_label: 'Promoter-capture Hi-C from Schoenfelder et al 2015'
+  reference: 'Schoenfelder, S. et al. The pluripotent regulatory circuitry connecting promoters to their long-range interacting elements. Genome Res. (2015). doi:10.1101/gr.185272.114'
+  PMID: "25752748"
+
+tracks:
+  -
+    genome: mm9
+    short_label: ESC promoter-other
+    long_label: Promoter-other interactions in ESC cells
+    original: raw-data/ESC_promoter_other_significant_interactions.txt
+    processed: processed-data/ESC_promoter_other_significant_interactions.bam
+    script: src/process.py
+    source:
+      url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
+      fn: E-MTAB-2414.additional.1.zip
+    trackinfo: 
+        tracktype: bam
+        visibility: dense
+        pairEndsByName: "yes"
+        pairSearchRange: 200000
+    type: bam
+
+
+  -
+    genome: mm9
+    short_label: ESC promoter-promoter
+    long_label: Promoter-promoter interactions in ESC cells
+    original: raw-data/ESC_promoter_promoter_significant_interactions.txt
+    processed: processed-data/ESC_promoter_promoter_significant_interactions.bam
+    script: src/process.py
+    source:
+      url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
+      fn: E-MTAB-2414.additional.1.zip
+    trackinfo: 
+        tracktype: bam
+        visibility: dense
+        pairEndsByName: "yes"
+        pairSearchRange: 200000
+    type: bam
+  -
+    genome: mm9
+    short_label: FLC promoter-other
+    long_label: Promoter-other interactions in FLC cells
+    original: raw-data/FLC_promoter_other_significant_interactions.txt
+    processed: processed-data/FLC_promoter_other_significant_interactions.bam
+    script: src/process.py
+    source:
+      url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
+      fn: E-MTAB-2414.additional.1.zip
+    trackinfo: 
+        tracktype: bam
+        visibility: dense
+        pairEndsByName: "yes"
+        pairSearchRange: 200000
+    type: bam
+
+
+  -
+    # this is pretty much just a placeholder track for now to trigger the
+    # download of the source files.
+    genome: mm9
+    short_label: FLC promoter-promoter
+    long_label: Promoter-promoter interactions in FLC cells
+    original: raw-data/FLC_promoter_promoter_significant_interactions.txt
+    processed: processed-data/FLC_promoter_promoter_significant_interactions.bam
+    script: src/process.py
+    source:
+      url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
+      fn: E-MTAB-2414.additional.1.zip
+    trackinfo: 
+        tracktype: bam
+        visibility: dense
+        pairEndsByName: "yes"
+        pairSearchRange: 200000
+    type: bam
