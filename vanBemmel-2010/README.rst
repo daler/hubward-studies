@@ -1,3 +1,5 @@
+Lamin-associated domains (LADs) in fly Kc cells as determined by DamID-chip.
+
 Raw data
 --------
 The original data is a flat text file in GFF format listing the positions of

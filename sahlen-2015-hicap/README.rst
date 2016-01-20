@@ -1,3 +1,6 @@
+Interactions in mouse ES cells as determined by HiCap (a capture modification
+of HiC).
+
 Supplemental tables were downloaded as a zip of Excel files. "Supplementary
 Table 5v5.xlsx" contains three worksheets (promoter-enhancer,
 promoter-promoter, and enhancer-enhancer interactions). Each of these were

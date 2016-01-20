@@ -1,3 +1,6 @@
+Interactions in mouse ES cells using ChIA-PET to SMC1 (a component of the
+cohesin complex).
+
 Merged SMC1 ChIA-PET interactions (Table S1E) were converted to BEDPE format
 and then to paired-end BAM files using BEDTools. This allows the BAM file to be
 lifted over to other genomes using CrossMap.
