@@ -1,0 +1,62 @@
+study:
+  label: sahlen-2015-hicap
+  short_label: sahlen-2015-hicap
+  long_label: Capture Hi-C data from mESC cells
+  reference: Sahlen, P. et al. Genome-wide mapping of promoter-anchored interactions with close to single-enhancer resolution. Genome Biol. 16, 156 (2015).
+  PMID: 26313521
+  description:
+tracks:
+  -
+    genome: mm9
+    short_label: promoter-to-enhancer
+    long_label: Promoter-enhancer interactions
+    original: "raw-data/Supplementary Table 5v5.xlsx"
+    processed: processed-data/promoter-to-enhancer.bam
+    script: src/process.py
+    source:
+      url: http://www.genomebiology.com/content/supplementary/s13059-015-0727-9-s1.zip
+      fn: s13059-015-0727-9-s1.zip
+    trackinfo: 
+        tracktype: bam
+        color: 255,0,0
+        visibility: dense
+        pairEndsByName: "yes"
+        pairSearchRange: 200000
+    type: bam
+
+  -
+    genome: mm9
+    short_label: promoter-to-promoter
+    long_label: Promoter-promoter interactions
+    original: "raw-data/Supplementary Table 5v5.xlsx"
+    processed: processed-data/promoter-to-promoter.bam
+    script: src/process.py
+    source:
+      url: http://www.genomebiology.com/content/supplementary/s13059-015-0727-9-s1.zip
+      fn: s13059-015-0727-9-s1.zip
+    trackinfo: 
+        tracktype: bam
+        color: 255,0,0
+        visibility: dense
+        pairEndsByName: "yes"
+        pairSearchRange: 200000
+    type: bam
+
+
+  -
+    genome: mm9
+    short_label: enhancer-to-enhancer
+    long_label: Enhancer-enhancer interactions
+    original: "raw-data/Supplementary Table 5v5.xlsx"
+    processed: processed-data/enhancer-to-enhancer.bam
+    script: src/process.py
+    source:
+      url: http://www.genomebiology.com/content/supplementary/s13059-015-0727-9-s1.zip
+      fn: s13059-015-0727-9-s1.zip
+    trackinfo: 
+        tracktype: bam
+        color: 255,0,0
+        visibility: dense
+        pairEndsByName: "yes"
+        pairSearchRange: 200000
+    type: bam
