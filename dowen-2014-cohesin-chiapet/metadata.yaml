@@ -1,0 +1,39 @@
+study:
+  label: dowen-2014
+  short_label: Dowen et al 2014
+  long_label: Cohesin ChIA-PET from Dowen et al 2014
+  reference: "Dowen, J. M. et al. Control of cell identity genes occurs in insulated neighborhoods in mammalian chromosomes. Cell 159, 374-387 (2014)."
+  PMID: "25303531"
+tracks:
+  -
+    genome: mm9
+    short_label: SMC1 interactions
+    long_label: merged SMC1 interactions
+    original: raw-data/mmc2.xlsx
+    processed: processed-data/smc1-merged-interactions.bam
+    script: src/interactions-bam.py
+    source:
+      url: http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S0092867414011799/1-s2.0-S0092867414011799-mmc2.xlsx/272196/html/S0092867414011799/7bc0d21e5a81c972aef6f5aee2e2766b/mmc2.xlsx
+      fn: mmc2.xlsx
+    trackinfo: 
+        tracktype: bam
+        visibility: dense
+        pairEndsByName: "yes"
+        pairSearchRange: 200000
+    type: bam
+  -
+    genome: mm9
+    short_label: super-enhancers
+    long_label: super enhancers
+    original: raw-data/mmc5.xlsx
+    processed: processed-data/super-enhancers.bigbed
+    script: src/super-enhancers.py
+    source:
+      url: http://www.sciencedirect.com/science/MiamiMultiMediaURL/1-s2.0-S0092867414011799/1-s2.0-S0092867414011799-mmc5.xlsx/272196/html/S0092867414011799/337697ad98ee2765e7bbc79ac3d4be83/mmc5.xlsx
+      fn: mmc5.xlsx
+    trackinfo: 
+        tracktype: bigBed 6
+        color: 255,0,0
+        visibility: dense
+    type: bigbed
+
