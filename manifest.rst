@@ -6,6 +6,29 @@ of each section corresponds to the directory within this repo.
 
 
 
+``dowen-2014-cohesin-chiapet``
+==============================
+Interactions in mouse ES cells using ChIA-PET to SMC1 (a component of the
+cohesin complex).
+
+Merged SMC1 ChIA-PET interactions (Table S1E) were converted to BEDPE format
+and then to paired-end BAM files using BEDTools. This allows the BAM file to be
+lifted over to other genomes using CrossMap.
+
+Super-enhancer coordinates from Table S4A were converted to BED and then to
+bigBed.
+
+
+:genome: mm9
+
+Tracks
+------
+
+* SMC1 interactions
+
+* super-enhancers
+
+
 ``hou-2012``
 ============
 Physical domain boundaries from Hou et al 2012 in Kc cells. Table S2 contains
@@ -53,6 +76,55 @@ Tracks
 * Anchor bin
 
 
+``sahlen-2015-hicap``
+=====================
+Interactions in mouse ES cells as determined by HiCap (a capture modification
+of HiC).
+
+Supplemental tables were downloaded as a zip of Excel files. "Supplementary
+Table 5v5.xlsx" contains three worksheets (promoter-enhancer,
+promoter-promoter, and enhancer-enhancer interactions). Each of these were
+converted to BEDPE format and then to paired-end BAM using BEDTools, which can
+be lifted over with CrossMap. Note that the promoter anchor sites are provided
+as single-bp TSS locations, so the BEDPE files use TSS and TSS+1 for the start
+and stop coords respectively.
+
+
+:genome: mm9
+
+Tracks
+------
+
+* promoter-to-enhancer
+
+* promoter-to-promoter
+
+* enhancer-to-enhancer
+
+
+``schoenfelder-2015-capture-HiC``
+=================================
+Interactions in mouse ES and fetal liver cells as determined by
+promoter-capture HiC.
+
+Data were downloaded from ArrayExpress, converted to BEDPE, and then to
+paired-end BAM for liftover using CrossMap.
+
+
+:genome: mm9
+
+Tracks
+------
+
+* ESC promoter-other
+
+* ESC promoter-promoter
+
+* FLC promoter-other
+
+* FLC promoter-promoter
+
+
 ``sexton-2012``
 ===============
 "Domain coordinates (from dm3 assembly) of the physical
@@ -91,6 +163,8 @@ Tracks
 
 * Anchor bin
 
+* Paired interactions: Paired interaction within beta globin locus
+
 
 ``test/yip-2012``
 =================
@@ -108,6 +182,8 @@ Tracks
 
 ``vanBemmel-2010``
 ==================
+Lamin-associated domains (LADs) in fly Kc cells as determined by DamID-chip.
+
 Raw data
 --------
 The original data is a flat text file in GFF format listing the positions of
@@ -134,6 +210,9 @@ Tracks
 
 ``wood-2011``
 =============
+Insulator peaks in fly Kc cells during the ecdysone response as determined by
+ChIP-seq.
+
 Data are available as BED and WIG format files from GEO accession GSE30740. BED
 files were minimally processed, by prepending "chr" to chromosome names,
 converting negative coordinates to zero, and truncating peaks outside of
