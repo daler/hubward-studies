@@ -64,11 +64,11 @@ option 2 above.
 The Lieberman et al data are in hg18 coordinates, so lift them over:
 
 ```bash
-    hubward liftover \
-        --from_assembly hg18 \
-        --to_assembly hg19 \
-        test/lieberman-2009 \
-        lieberman-2009-hg19
+hubward liftover \
+    --from_assembly hg18 \
+    --to_assembly hg19 \
+    test/lieberman-2009 \
+    lieberman-2009-hg19
 ```
 
 You can now use the processed data for downstream analysis, or if you have
@@ -78,7 +78,7 @@ your server information.  The `studies` section is already filled in to include
 the two test studies. When you're ready, upload:
 
 ```bash
-    hubward upload example-group.yaml
+hubward upload example-group.yaml
 ```
 
 
