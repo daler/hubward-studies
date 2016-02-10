@@ -150,6 +150,23 @@ Tracks
 * TADs
 
 
+``soruco-2013``
+===============
+Description of study and necessary processing steps
+
+
+:genome: dm3
+
+Tracks
+------
+
+* CLAMP GFP KD, Kc
+
+* CLAMP GFP KD, S2
+
+* CLAMP MSL2 KD, S2
+
+
 ``test/lieberman-2009``
 =======================
 Hi-C data in K562 cells. *Note: only selected regions included*

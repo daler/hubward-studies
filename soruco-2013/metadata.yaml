@@ -1,0 +1,57 @@
+study:
+  label: soruco-2013
+  short_label: CLAMP ChIP-seq
+  long_label: CLAMP ChIP-seq from Soruco et al 2013
+  reference: "Genes Dev. 2013 Jul 15; 27(14): 1551-1556. doi:10.1101/gad.214585.113"
+
+  PMID: "23873939"
+
+  description:
+
+tracks:
+  -
+    genome: dm3
+    short_label: CLAMP GFP KD, Kc
+
+    long_label: CLAMP ChIP-seq signal in GFP knockdown Kc cells
+    original: raw-data/GSE39271_chip_kccells_clamp_gfp_rnai_combined.wig.gz
+    processed: processed-data/GSE39271_chip_kccells_clamp_gfp_rnai_combined.bigwig
+    script: src/wig2bigwig.sh
+    source:
+      url: http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE39271&format=file&file=GSE39271%5Fchip%5Fkccells%5Fclamp%5Fgfp%5Frnai%5Fcombined%2Ewig%2Egz
+      fn: GSE39271_chip_kccells_clamp_gfp_rnai_combined.wig.gz
+    trackinfo: 
+        tracktype: bigWig
+        visibility: full
+    type: bigwig
+
+  -
+    genome: dm3
+    short_label: CLAMP GFP KD, S2
+
+    long_label: CLAMP ChIP-seq signal in GFP knockdown S2 cells
+    original: raw-data/GSE39271_chip_s2cells_clamp_gfp_rnai_combined.wig.gz
+    processed: processed-data/GSE39271_chip_s2cells_clamp_gfp_rnai_combined.bigwig
+    script: src/wig2bigwig.sh
+    source:
+      url: http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE39271&format=file&file=GSE39271%5Fchip%5Fs2cells%5Fclamp%5Fgfp%5Frnai%5Fcombined%2Ewig%2Egz
+      fn: GSE39271_chip_s2cells_clamp_gfp_rnai_combined.wig.gz
+    trackinfo: 
+        tracktype: bigWig
+        visibility: full
+    type: bigwig
+
+  -
+    genome: dm3
+    short_label: CLAMP MSL2 KD, S2
+    long_label: CLAMP ChIP-seq signal in MSL2 knockdown S2 cells
+    original: raw-data/GSE39271_chip_s2cells_clamp_msl2_rnai_combined.wig.gz
+    processed: processed-data/GSE39271_chip_s2cells_clamp_gfp_rnai_combined.bigwig
+    script: src/wig2bigwig.sh
+    source:
+      url: http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE39271&format=file&file=GSE39271%5Fchip%5Fs2cells%5Fclamp%5Fmsl2%5Frnai%5Fcombined%2Ewig%2Egz
+      fn: GSE39271_chip_s2cells_clamp_msl2_rnai_combined.wig.gz
+    trackinfo: 
+        tracktype: bigWig
+        visibility: full
+    type: bigwig
