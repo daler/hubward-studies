@@ -22,6 +22,7 @@ tracks:
       fn: GSE39271_chip_kccells_clamp_gfp_rnai_combined.wig.gz
     trackinfo: 
         tracktype: bigWig
+        viewLimits: '-2:5'
         visibility: full
     type: bigwig
 
@@ -38,6 +39,7 @@ tracks:
       fn: GSE39271_chip_s2cells_clamp_gfp_rnai_combined.wig.gz
     trackinfo: 
         tracktype: bigWig
+        viewLimits: '-2:5'
         visibility: full
     type: bigwig
 
@@ -53,5 +55,6 @@ tracks:
       fn: GSE39271_chip_s2cells_clamp_msl2_rnai_combined.wig.gz
     trackinfo: 
         tracktype: bigWig
+        viewLimits: '-2:5'
         visibility: full
     type: bigwig
