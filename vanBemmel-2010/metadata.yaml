@@ -15,10 +15,10 @@ tracks:
     processed: processed-data/tableS1.bigbed
     script: src/process.py
     source:
-      url: http://www.plosone.org/article/fetchSingleRepresentation.action?uri=info:doi/10.1371/journal.pone.0015013.s007
+      url: http://journals.plos.org/plosone/article/asset?unique&id=info:doi/10.1371/journal.pone.0015013.s007
       fn: tableS1.txt
 
-    trackinfo: 
+    trackinfo:
         tracktype: bigBed 6
         itemRgb: "on"
         minGrayLevel: 3
