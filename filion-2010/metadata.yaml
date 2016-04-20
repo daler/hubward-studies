@@ -14,12 +14,12 @@ study:
   # Optional short label for this study. It will be shown in blue link
   # text in the browser. If not provided, the value of 'label' will be
   # used.
-  short_label: Filion 2011 chromatin colors
+  short_label: Filion 2010 chromatin colors
 
   # Long-form label for this study. This is shown as a title on the
   # study's configuration page. If not provided, the value of
   # 'short_label' will be used.
-  long_label: Chromatin colors from Filion 2011
+  long_label: Chromatin colors from Filion 2010
 
   # Optional reference to study, often copied from reference manager.
   # This will be included in the HTML documentation for the study's page
