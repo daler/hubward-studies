@@ -110,6 +110,90 @@ tracks:
     # - "vcf"
     type: bigbed
 
+  -
+    genome: dm3
+    short_label: RED chromatin
+    long_label: Annotated chromatin colors (RED)
+    original: raw-data/GSE22069_Drosophila_chromatin_domains.txt.gz
+    processed: processed-data/chromatin-colors-RED.bigbed
+    script: src/process-chromatin-colors-single.py
+    source:
+      url: http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE22069&format=file&file=GSE22069%5FDrosophila%5Fchromatin%5Fdomains%2Etxt%2Egz
+      fn: GSE22069_Drosophila_chromatin_domains.txt.gz
+    trackinfo:
+      tracktype: bigBed 9
+      visibility: dense
+      itemRgb: 'on'
+    type: bigbed
+
+  -
+    genome: dm3
+    short_label: BLACK chromatin
+    long_label: Annotated chromatin colors (BLACK)
+    original: raw-data/GSE22069_Drosophila_chromatin_domains.txt.gz
+    processed: processed-data/chromatin-colors-BLACK.bigbed
+    script: src/process-chromatin-colors-single.py
+    source:
+      url: http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE22069&format=file&file=GSE22069%5FDrosophila%5Fchromatin%5Fdomains%2Etxt%2Egz
+      fn: GSE22069_Drosophila_chromatin_domains.txt.gz
+    trackinfo:
+      tracktype: bigBed 9
+      visibility: dense
+      itemRgb: 'on'
+    type: bigbed
+
+  -
+    genome: dm3
+    short_label: YELLOW chromatin
+    long_label: Annotated chromatin colors (YELLOW)
+    original: raw-data/GSE22069_Drosophila_chromatin_domains.txt.gz
+    processed: processed-data/chromatin-colors-YELLOW.bigbed
+    script: src/process-chromatin-colors-single.py
+    source:
+      url: http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE22069&format=file&file=GSE22069%5FDrosophila%5Fchromatin%5Fdomains%2Etxt%2Egz
+      fn: GSE22069_Drosophila_chromatin_domains.txt.gz
+    trackinfo:
+      tracktype: bigBed 9
+      visibility: dense
+      itemRgb: 'on'
+    type: bigbed
+
+  -
+    genome: dm3
+    short_label: GREEN chromatin
+    long_label: Annotated chromatin colors (GREEN)
+    original: raw-data/GSE22069_Drosophila_chromatin_domains.txt.gz
+    processed: processed-data/chromatin-colors-GREEN.bigbed
+    script: src/process-chromatin-colors-single.py
+    source:
+      url: http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE22069&format=file&file=GSE22069%5FDrosophila%5Fchromatin%5Fdomains%2Etxt%2Egz
+      fn: GSE22069_Drosophila_chromatin_domains.txt.gz
+    trackinfo:
+      tracktype: bigBed 9
+      visibility: dense
+      itemRgb: 'on'
+    type: bigbed
+
+  -
+    genome: dm3
+    short_label: BLUE chromatin
+    long_label: Annotated chromatin colors (BLUE)
+    original: raw-data/GSE22069_Drosophila_chromatin_domains.txt.gz
+    processed: processed-data/chromatin-colors-BLUE.bigbed
+    script: src/process-chromatin-colors-single.py
+    source:
+      url: http://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE22069&format=file&file=GSE22069%5FDrosophila%5Fchromatin%5Fdomains%2Etxt%2Egz
+      fn: GSE22069_Drosophila_chromatin_domains.txt.gz
+    trackinfo:
+      tracktype: bigBed 9
+      visibility: dense
+      itemRgb: 'on'
+    type: bigbed
+
+
+
+
+
 
 disabled:
 
