@@ -93,8 +93,7 @@ tracks:
     # bigBed file (chrom, start, stop, name), show the track in dense
     # visibility mode by default, and appear red (R, G, B color tuple).
     trackinfo: 
-        tracktype: bigBed 6
-        color: 255,0,0
+        tracktype: bigBed 3
         visibility: dense
 
     # Data type of `processed`. Must be one of the formats supported by
