@@ -6,6 +6,38 @@ of each section corresponds to the directory within this repo.
 
 
 
+``alvarez-dominguez-2014``
+==========================
+
+See `Figure
+1 <http://www.bloodjournal.org/content/bloodjournal/123/4/570/F1.large.jpg>_`
+from the paper for info on the classes of long non-coding RNAs.
+
+Briefly:
+
+* lincRNA: intergenic lncRNA
+* alncRNA: antisense lncRNA
+* ilncRNA: intronic overlapping lncRNA
+* elncRNA: enhancer lncRNA
+* shlncRNA: sRNA host lncRNA
+
+
+:genome: mm9
+
+Tracks
+------
+
+* lincRNA
+
+* alncRNA
+
+* ilncRNA
+
+* shlncRNA
+
+* plncRNA
+
+
 ``dowen-2014-cohesin-chiapet``
 ==============================
 Interactions in mouse ES cells using ChIA-PET to SMC1 (a component of the
@@ -27,6 +59,44 @@ Tracks
 * SMC1 interactions
 
 * super-enhancers
+
+
+``filion-2010``
+===============
+Chromatin colors are from a 5-state model trained on 53 DamID profiles,
+downloaded from GSE22069 and converted to bigBed (along with coloring the
+regions according to their "COLOR").
+
+- GREEN: HP1
+- YELLOW: Active, have H3K36me3, broad expression
+- RED: Active, not H3K36me3, more specifically expressed genes
+- BLUE: Polycomb
+- BLACK: Repressive
+
+
+Signal tracks are from downloading tab-delimited txt.gz from GSE22069,
+extracting coordinates and values into a begGraph, and converting to bigWig.
+The data have already been normalized according to the methods in the
+manuscript.
+
+
+
+:genome: dm3
+
+Tracks
+------
+
+* chromatin colors
+
+* RED chromatin
+
+* BLACK chromatin
+
+* YELLOW chromatin
+
+* GREEN chromatin
+
+* BLUE chromatin
 
 
 ``hou-2012``
@@ -153,6 +223,8 @@ Tracks
 ``soruco-2013``
 ===============
 CLAMP ChIP-seq in Kc and S2 cells, as well as in MSL2 RNAi cells.
+
+Data downloaded from GEO, accession GSE39271.
 
 From the supplemental methods: signal is log2 fold change of IP over input,
 after binning reads into 20-bp bins and normalizing by respective library size.
