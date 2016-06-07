@@ -9,7 +9,7 @@ study:
 
   # Label for this study. The sanitized version of this (non-alphanumeric
   # characters stripped) should be unique among a group.
-  label: filion-2011
+  label: filion-2010
 
   # Optional short label for this study. It will be shown in blue link
   # text in the browser. If not provided, the value of 'label' will be
