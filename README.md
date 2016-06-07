@@ -6,6 +6,9 @@ The goal is for users to mix-and-match (and contribute!) studies from this
 repository to build their own custom track hubs, enabling easy visualization of
 published data alongside their own data.
 
+The [manifest](manifest.rst) lists what tracks are currently available in the
+repo.
+
 # Getting started
 This first section will get you set up and running a small test data set to
 confirm that everything is set up correctly.
