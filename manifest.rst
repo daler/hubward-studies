@@ -99,6 +99,19 @@ Tracks
 * BLUE chromatin
 
 
+``fuda-2015``
+=============
+Description of study and necessary processing steps
+
+
+:genome: dm3
+
+Tracks
+------
+
+* GAF peaks
+
+
 ``hou-2012``
 ============
 Physical domain boundaries from Hou et al 2012 in Kc cells. Table S2 contains
