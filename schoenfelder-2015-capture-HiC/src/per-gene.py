@@ -52,9 +52,7 @@ def get_contacts():
             yield contact
 bt = pybedtools.BedTool(get_contacts()).saveas()
 if len(bt) == 0:
-    with open(target, 'w') as fout:
-        pass
-
+    bt = pybedtools.BedTool('chr5_random		92416	92417	.	0	.	92416	92417	0,0,0', from_string=True)
 else:
     norm = bt.colormap_normalize(vmin=7.0, vmax=18.0)
     bt = pybedtools.BedTool(itertools.chain(bt, [get_bait()])).saveas()
@@ -68,4 +66,4 @@ else:
 
 
     bt = bt.each(recolor).sort()
-    bigbed(bt, genome='mm9', output=target)
+bigbed(bt, genome='mm9', output=target)
