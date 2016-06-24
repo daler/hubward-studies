@@ -1,77 +1,541 @@
 study:
+  PMID: '25752748'
   label: schoenfelder-2015
-  long_label: 'Promoter-capture Hi-C from Schoenfelder et al 2015'
-  reference: 'Schoenfelder, S. et al. The pluripotent regulatory circuitry connecting promoters to their long-range interacting elements. Genome Res. (2015). doi:10.1101/gr.185272.114'
-  PMID: "25752748"
-
+  long_label: Promoter-capture Hi-C from Schoenfelder et al 2015
+  reference: Schoenfelder, S. et al. The pluripotent regulatory circuitry connecting
+    promoters to their long-range interacting elements. Genome Res. (2015). doi:10.1101/gr.185272.114
 tracks:
-  -
-    genome: mm9
-    short_label: ESC promoter-other
-    long_label: Promoter-other interactions in ESC cells
-    original: raw-data/ESC_promoter_other_significant_interactions.txt
-    processed: processed-data/ESC_promoter_other_significant_interactions.bam
-    script: src/process.py
-    source:
-      url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
-      fn: E-MTAB-2414.additional.1.zip
-    trackinfo: 
-        tracktype: bam
-        visibility: dense
-        pairEndsByName: "yes"
-        pairSearchRange: 200000
-    type: bam
-
-
-  -
-    genome: mm9
-    short_label: ESC promoter-promoter
-    long_label: Promoter-promoter interactions in ESC cells
-    original: raw-data/ESC_promoter_promoter_significant_interactions.txt
-    processed: processed-data/ESC_promoter_promoter_significant_interactions.bam
-    script: src/process.py
-    source:
-      url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
-      fn: E-MTAB-2414.additional.1.zip
-    trackinfo: 
-        tracktype: bam
-        visibility: dense
-        pairEndsByName: "yes"
-        pairSearchRange: 200000
-    type: bam
-  -
-    genome: mm9
-    short_label: FLC promoter-other
-    long_label: Promoter-other interactions in FLC cells
-    original: raw-data/FLC_promoter_other_significant_interactions.txt
-    processed: processed-data/FLC_promoter_other_significant_interactions.bam
-    script: src/process.py
-    source:
-      url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
-      fn: E-MTAB-2414.additional.1.zip
-    trackinfo: 
-        tracktype: bam
-        visibility: dense
-        pairEndsByName: "yes"
-        pairSearchRange: 200000
-    type: bam
-
-
-  -
-    # this is pretty much just a placeholder track for now to trigger the
-    # download of the source files.
-    genome: mm9
-    short_label: FLC promoter-promoter
-    long_label: Promoter-promoter interactions in FLC cells
-    original: raw-data/FLC_promoter_promoter_significant_interactions.txt
-    processed: processed-data/FLC_promoter_promoter_significant_interactions.bam
-    script: src/process.py
-    source:
-      url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
-      fn: E-MTAB-2414.additional.1.zip
-    trackinfo: 
-        tracktype: bam
-        visibility: dense
-        pairEndsByName: "yes"
-        pairSearchRange: 200000
-    type: bam
+- genome: mm9
+  long_label: Promoter-otherPromoter-other interactions in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions.bam
+  script: src/process.py
+  short_label: ESC promoter-other
+  source: &id001
+    fn: E-MTAB-2414.additional.1.zip
+    url: http://www.ebi.ac.uk/arrayexpress/files/E-MTAB-2414/E-MTAB-2414.additional.1.zip
+  trackinfo:
+    pairEndsByName: .
+    pairSearchRange: 2000000
+    tracktype: bam
+    visibility: dense
+  type: bam
+- genome: mm9
+  long_label: Promoter-promoterPromoter-promoter interactions in ESC cells
+  original: raw-data/ESC_promoter_promoter_significant_interactions.txt
+  processed: processed-data/ESC_promoter_promoter_significant_interactions.bam
+  script: src/process.py
+  short_label: ESC promoter-promoter
+  source: *id001
+  trackinfo:
+    pairEndsByName: .
+    pairSearchRange: 2000000
+    tracktype: bam
+    visibility: dense
+  type: bam
+- genome: mm9
+  long_label: Promoter-otherPromoter-other interactions in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions.bam
+  script: src/process.py
+  short_label: FLC promoter-other
+  source: *id001
+  trackinfo:
+    pairEndsByName: .
+    pairSearchRange: 2000000
+    tracktype: bam
+    visibility: dense
+  type: bam
+- genome: mm9
+  long_label: Promoter-promoterPromoter-promoter interactions in FLC cells
+  original: raw-data/FLC_promoter_promoter_significant_interactions.txt
+  processed: processed-data/FLC_promoter_promoter_significant_interactions.bam
+  script: src/process.py
+  short_label: FLC promoter-promoter
+  source: *id001
+  trackinfo:
+    pairEndsByName: .
+    pairSearchRange: 2000000
+    tracktype: bam
+    visibility: dense
+  type: bam
+- genome: mm9
+  long_label: Promoter-other interactions for Cpeb4-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Cpeb4-001.bigbed
+  script: src/per-gene.py
+  short_label: Cpeb4-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Myb-203 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Myb-203.bigbed
+  script: src/per-gene.py
+  short_label: Myb-203, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Plcl2-201 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Plcl2-201.bigbed
+  script: src/per-gene.py
+  short_label: Plcl2-201, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Bcl11a-003 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Bcl11a-003.bigbed
+  script: src/per-gene.py
+  short_label: Bcl11a-003, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Car2-201 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Car2-201.bigbed
+  script: src/per-gene.py
+  short_label: Car2-201, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Meis1-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Meis1-001.bigbed
+  script: src/per-gene.py
+  short_label: Meis1-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Tmco1-201 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Tmco1-201.bigbed
+  script: src/per-gene.py
+  short_label: Tmco1-201, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hbb-b1-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Hbb-b1-001.bigbed
+  script: src/per-gene.py
+  short_label: Hbb-b1-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hbb-b2-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Hbb-b2-001.bigbed
+  script: src/per-gene.py
+  short_label: Hbb-b2-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hbb-bh1-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Hbb-bh1-001.bigbed
+  script: src/per-gene.py
+  short_label: Hbb-bh1-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hbb-y-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Hbb-y-001.bigbed
+  script: src/per-gene.py
+  short_label: Hbb-y-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hba-a1-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Hba-a1-001.bigbed
+  script: src/per-gene.py
+  short_label: Hba-a1-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hba-x-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Hba-x-001.bigbed
+  script: src/per-gene.py
+  short_label: Hba-x-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Mgst3-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Mgst3-001.bigbed
+  script: src/per-gene.py
+  short_label: Mgst3-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Gypa-201 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Gypa-201.bigbed
+  script: src/per-gene.py
+  short_label: Gypa-201, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Ppox-001 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Ppox-001.bigbed
+  script: src/per-gene.py
+  short_label: Ppox-001, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Add2-202|Add2-201 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Add2-202_Add2-201.bigbed
+  script: src/per-gene.py
+  short_label: Add2-202|Add2-201, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Pcx-201|Pcx-202|Pcx-203 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Pcx-201_Pcx-202_Pcx-203.bigbed
+  script: src/per-gene.py
+  short_label: Pcx-201|Pcx-202|Pcx-203, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Clk3-201 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Clk3-201.bigbed
+  script: src/per-gene.py
+  short_label: Clk3-201, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Stx11-201|Stx11-202 in ESC cells
+  original: raw-data/ESC_promoter_other_significant_interactions.txt
+  processed: processed-data/ESC_promoter_other_significant_interactions_for_Stx11-201_Stx11-202.bigbed
+  script: src/per-gene.py
+  short_label: Stx11-201|Stx11-202, ESC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Cpeb4-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Cpeb4-001.bigbed
+  script: src/per-gene.py
+  short_label: Cpeb4-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Myb-203 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Myb-203.bigbed
+  script: src/per-gene.py
+  short_label: Myb-203, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Plcl2-201 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Plcl2-201.bigbed
+  script: src/per-gene.py
+  short_label: Plcl2-201, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Bcl11a-003 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Bcl11a-003.bigbed
+  script: src/per-gene.py
+  short_label: Bcl11a-003, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Car2-201 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Car2-201.bigbed
+  script: src/per-gene.py
+  short_label: Car2-201, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Meis1-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Meis1-001.bigbed
+  script: src/per-gene.py
+  short_label: Meis1-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Tmco1-201 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Tmco1-201.bigbed
+  script: src/per-gene.py
+  short_label: Tmco1-201, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hbb-b1-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Hbb-b1-001.bigbed
+  script: src/per-gene.py
+  short_label: Hbb-b1-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hbb-b2-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Hbb-b2-001.bigbed
+  script: src/per-gene.py
+  short_label: Hbb-b2-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hbb-bh1-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Hbb-bh1-001.bigbed
+  script: src/per-gene.py
+  short_label: Hbb-bh1-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hbb-y-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Hbb-y-001.bigbed
+  script: src/per-gene.py
+  short_label: Hbb-y-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hba-a1-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Hba-a1-001.bigbed
+  script: src/per-gene.py
+  short_label: Hba-a1-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Hba-x-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Hba-x-001.bigbed
+  script: src/per-gene.py
+  short_label: Hba-x-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Mgst3-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Mgst3-001.bigbed
+  script: src/per-gene.py
+  short_label: Mgst3-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Gypa-201 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Gypa-201.bigbed
+  script: src/per-gene.py
+  short_label: Gypa-201, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Ppox-001 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Ppox-001.bigbed
+  script: src/per-gene.py
+  short_label: Ppox-001, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Add2-202|Add2-201 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Add2-202_Add2-201.bigbed
+  script: src/per-gene.py
+  short_label: Add2-202|Add2-201, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Pcx-201|Pcx-202|Pcx-203 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Pcx-201_Pcx-202_Pcx-203.bigbed
+  script: src/per-gene.py
+  short_label: Pcx-201|Pcx-202|Pcx-203, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Clk3-201 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Clk3-201.bigbed
+  script: src/per-gene.py
+  short_label: Clk3-201, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
+- genome: mm9
+  long_label: Promoter-other interactions for Stx11-201|Stx11-202 in FLC cells
+  original: raw-data/FLC_promoter_other_significant_interactions.txt
+  processed: processed-data/FLC_promoter_other_significant_interactions_for_Stx11-201_Stx11-202.bigbed
+  script: src/per-gene.py
+  short_label: Stx11-201|Stx11-202, FLC
+  source: *id001
+  trackinfo:
+    itemRgb: 'on'
+    tracktype: bigBed 9
+    visibility: hide
+  type: bigbed
