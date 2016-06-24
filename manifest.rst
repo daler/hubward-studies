@@ -101,7 +101,12 @@ Tracks
 
 ``fuda-2015``
 =============
-Description of study and necessary processing steps
+Called peaks from GAF ChIP-seq.
+
+BED file was downloaded from GSE40646 and converted to bigBed. The original BED
+file used macs to call peaks. The original experiment included 2 replicates of
+GAF ChIP-seq in both mock and GAF knockdown S2 cells; the GEO entry contains
+only the mock data (a merge of the two replicates).
 
 
 :genome: dm3
@@ -193,6 +198,18 @@ promoter-capture HiC.
 Data were downloaded from ArrayExpress, converted to BEDPE, and then to
 paired-end BAM for liftover using CrossMap.
 
+To prepare data for a selected set of genes, the promoter bait was first
+extracted according to the gene name (4th column in raw data) and colored red.
+The rest of the contacts that interact with that promoter are colored according
+to their log(obs/exp) (last column in the raw data), where the color range goes
+from 7.0 (light gray) to 18 (black). All selected genes for ESC and FLC are
+scaled to the same color scale, so their interaction frequencies can be
+compared across genes and across cell types.
+
+If no significant interactions were found for a gene in a cell type, then there
+will be an empty file in place of the bigBed, which will show up in the genome
+browser as a yellow band.
+
 
 :genome: mm9
 
@@ -206,6 +223,86 @@ Tracks
 * FLC promoter-other
 
 * FLC promoter-promoter
+
+* Cpeb4-001, ESC
+
+* Myb-203, ESC
+
+* Plcl2-201, ESC
+
+* Bcl11a-003, ESC
+
+* Car2-201, ESC
+
+* Meis1-001, ESC
+
+* Tmco1-201, ESC
+
+* Hbb-b1-001, ESC
+
+* Hbb-b2-001, ESC
+
+* Hbb-bh1-001, ESC
+
+* Hbb-y-001, ESC
+
+* Hba-a1-001, ESC
+
+* Hba-x-001, ESC
+
+* Mgst3-001, ESC
+
+* Gypa-201, ESC
+
+* Ppox-001, ESC
+
+* Add2-202|Add2-201, ESC
+
+* Pcx-201|Pcx-202|Pcx-203, ESC
+
+* Clk3-201, ESC
+
+* Stx11-201|Stx11-202, ESC
+
+* Cpeb4-001, FLC
+
+* Myb-203, FLC
+
+* Plcl2-201, FLC
+
+* Bcl11a-003, FLC
+
+* Car2-201, FLC
+
+* Meis1-001, FLC
+
+* Tmco1-201, FLC
+
+* Hbb-b1-001, FLC
+
+* Hbb-b2-001, FLC
+
+* Hbb-bh1-001, FLC
+
+* Hbb-y-001, FLC
+
+* Hba-a1-001, FLC
+
+* Hba-x-001, FLC
+
+* Mgst3-001, FLC
+
+* Gypa-201, FLC
+
+* Ppox-001, FLC
+
+* Add2-202|Add2-201, FLC
+
+* Pcx-201|Pcx-202|Pcx-203, FLC
+
+* Clk3-201, FLC
+
+* Stx11-201|Stx11-202, FLC
 
 
 ``sexton-2012``
