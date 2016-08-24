@@ -164,6 +164,21 @@ Tracks
 * Anchor bin
 
 
+``moshkovich-2011``
+===================
+AGO2 ChIP-seq peaks from S2 and S3 cells. Data were downloaded from GEO GSE22623.
+
+
+:genome: dm3
+
+Tracks
+------
+
+* AGO2 S2 peaks
+
+* AGO2 S3 peaks
+
+
 ``sahlen-2015-hicap``
 =====================
 Interactions in mouse ES cells as determined by HiCap (a capture modification
