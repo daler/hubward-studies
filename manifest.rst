@@ -239,85 +239,101 @@ Tracks
 
 * FLC promoter-promoter
 
-* Cpeb4-001, ESC
+* ESC promoter-other bait
 
-* Myb-203, ESC
+* ESC promoter-promoter bait
 
-* Plcl2-201, ESC
+* FLC promoter-other bait
 
-* Bcl11a-003, ESC
+* FLC promoter-promoter bait
 
-* Car2-201, ESC
+* Runx1, FLC
 
-* Meis1-001, ESC
+* Rgs10, FLC
 
-* Tmco1-201, ESC
+* Cpeb4, FLC
 
-* Hbb-b1-001, ESC
+* Myb, FLC
 
-* Hbb-b2-001, ESC
+* Plcl2, FLC
 
-* Hbb-bh1-001, ESC
+* Bcl11a, FLC
 
-* Hbb-y-001, ESC
+* Car2, FLC
 
-* Hba-a1-001, ESC
+* Meis1, FLC
 
-* Hba-x-001, ESC
+* Tmco1, FLC
 
-* Mgst3-001, ESC
+* Hbb-b1, FLC
 
-* Gypa-201, ESC
+* Hbb-b2, FLC
 
-* Ppox-001, ESC
+* Hbb-bh1, FLC
 
-* Add2-202|Add2-201, ESC
+* Hbb-y, FLC
 
-* Pcx-201|Pcx-202|Pcx-203, ESC
+* Hba-a1, FLC
 
-* Clk3-201, ESC
+* Hba-x, FLC
 
-* Stx11-201|Stx11-202, ESC
+* Mgst3, FLC
 
-* Cpeb4-001, FLC
+* Gypa, FLC
 
-* Myb-203, FLC
+* Ppox, FLC
 
-* Plcl2-201, FLC
+* Add2, FLC
 
-* Bcl11a-003, FLC
+* Pcx, FLC
 
-* Car2-201, FLC
+* Clk3, FLC
 
-* Meis1-001, FLC
+* Stx11, FLC
 
-* Tmco1-201, FLC
+* Cnnm2, FLC
 
-* Hbb-b1-001, FLC
+* Galns, FLC
 
-* Hbb-b2-001, FLC
+* Klf13, FLC
 
-* Hbb-bh1-001, FLC
+* Dapk2, FLC
 
-* Hbb-y-001, FLC
+* Add3, FLC
 
-* Hba-a1-001, FLC
+* Foxo3, FLC
 
-* Hba-x-001, FLC
+* Ifnar2, FLC
 
-* Mgst3-001, FLC
+* Junb, FLC
 
-* Gypa-201, FLC
+* Mylip, FLC
 
-* Ppox-001, FLC
+* Bmp2k, FLC
 
-* Add2-202|Add2-201, FLC
+* Abhd16a, FLC
 
-* Pcx-201|Pcx-202|Pcx-203, FLC
+* Rab43, FLC
 
-* Clk3-201, FLC
+* Rhbdf1, FLC
 
-* Stx11-201|Stx11-202, FLC
+* Grina, FLC
+
+* Rhof, FLC
+
+* Fads2, FLC
+
+* Bcl2l1, FLC
+
+* Nfe2l1, FLC
+
+* Ccnb1, FLC
+
+* St3gal5, FLC
+
+* Ube2f, FLC
+
+* Amd1, FLC
 
 
 ``sexton-2012``
